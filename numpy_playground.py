@@ -15,7 +15,7 @@ lists in Python, except that every thing inside an array must be of the
 same type, like int or float.
 '''
 # Change False to True to see Numpy arrays in action
-if True:
+if False:
     array = np.array([1, 4, 5, 8], float)
     print(array)
     print("")
@@ -79,9 +79,11 @@ mean and dot product.
 
 Both of these functions will be useful in later programming quizzes.
 '''
-if False:
+if True:
     array_1 = np.array([1, 2, 3], float)
+    print(array_1)
     array_2 = np.array([[6], [7], [8]], float)
+    print(array_2)
     print(np.mean(array_1))
     print(np.mean(array_2))
     print("")
