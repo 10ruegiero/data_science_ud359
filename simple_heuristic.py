@@ -219,7 +219,7 @@ def custom_heuristic(file_path):
     for passenger_index, passenger in df.iterrows():
         passenger_id = passenger['PassengerId']
 
-        if passenger['Sex'] == 'female' and passenger['Pclass'] != 3:
+        if passenger['Sex'] == 'female' and (passenger['Pclass'] == 2 or passenger['Pclass'] == 1):
             predictions[passenger_id] = 1
         elif passenger['Age'] < 18 and passenger['Pclass'] == 1:
             predictions[passenger_id] = 1
@@ -227,6 +227,8 @@ def custom_heuristic(file_path):
             predictions[passenger_id] = 1
         elif passenger['Fare'] > 500:
            predictions[passenger_id] = 1
+        elif passenger['Sex'] == 'female' and passenger['SibSp'] == 0 and passenger['Parch'] >= 1 and passenger['Parch'] <= 3:
+            predictions[passenger_id] = 1
         else:
             predictions[passenger_id] = 0
 
