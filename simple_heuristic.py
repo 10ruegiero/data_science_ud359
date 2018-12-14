@@ -223,8 +223,8 @@ def custom_heuristic(file_path):
             predictions[passenger_id] = 1
         elif passenger['Age'] < 18 and passenger['Pclass'] == 1:
             predictions[passenger_id] = 1
-        # elif passenger['Parch'] >= 1 and passenger['SibSp'] >= 1 and passenger['Pclass'] == 1:
-        #   predictions[passenger_id] = 1
+        elif passenger['Parch'] ==0 and passenger['SibSp'] == 0 and passenger['Pclass'] == 1 and passenger['Fare'] >= 50:
+           predictions[passenger_id] = 1
         elif passenger['Age'] >= 75:
             predictions[passenger_id] = 1
         # elif passenger['Fare'] > 50:
