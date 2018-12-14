@@ -67,8 +67,14 @@ def simple_heuristic(file_path):
         #     if passenger['Sex'] == 'male':
         #         predictions[passenger_id] = 1
 
-        if passenger['Sex'] == 'male':
+        if passenger['Fare'] > 50:
             predictions[passenger_id] = 1
+        #elif passenger['Age'] >= 16 and passenger['Age'] <= 48 :
+        #   predictions[passenger_id] = 1
+        #elif passenger['Fare'] > 50:
+        #    predictions[passenger_id] = 1
+        #elif passenger['Sex'] == 'female':
+        #    predictions[passenger_id] = 1
         else:
             predictions[passenger_id] = 0
 
@@ -92,6 +98,12 @@ def calculate_accuracy(predictions, df):
 def main():
     file = 'titanic-data.csv'
     df = pandas.read_csv(file)
+
+    #En tête des colonnes
+    print(df.head())
+
+
+    # Prédictions
     predictions = simple_heuristic(file)
     precision = calculate_accuracy(predictions, df)
     print("Your heuristic is %0.2f %% accurate. Is it 78%% or better?" % (precision*100))
