@@ -75,11 +75,12 @@ def simple_heuristic(file_path):
     return predictions
 
 
-def precision(predictions, df):
+def calculate_accuracy(predictions, df):
     num_of_row = df.shape[0]
     survived_ok = 0
     for passenger_index, passenger in df.iterrows():
-        if passenger['Survived'] == predictions[passenger_index]:
+        passenger_id = passenger['PassengerId']
+        if passenger['Survived'] == predictions[passenger_id]:
             survived_ok += 1
 
     precision = float(survived_ok / num_of_row)
@@ -88,5 +89,14 @@ def precision(predictions, df):
 
 # Main
 
-file = 'titanic-data.csv'
-df = pandas.read_csv(file)
+def main():
+    file = 'titanic-data.csv'
+    df = pandas.read_csv(file)
+    predictions = simple_heuristic(file)
+    precision = calculate_accuracy(predictions, df)
+    print("Your heuristic is %0.f % accurate. Is it 78% or better?" % precision)
+
+
+main()
+
+
