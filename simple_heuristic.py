@@ -94,7 +94,7 @@ def main():
     df = pandas.read_csv(file)
     predictions = simple_heuristic(file)
     precision = calculate_accuracy(predictions, df)
-    print("Your heuristic is %0.f % accurate. Is it 78% or better?" % precision)
+    print("Your heuristic is %0.2f %% accurate. Is it 78%% or better?" % (precision*100))
 
 
 main()
