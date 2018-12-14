@@ -69,8 +69,8 @@ def simple_heuristic(file_path):
 
         if passenger['Fare'] > 50:
             predictions[passenger_id] = 1
-        #elif passenger['Age'] >= 16 and passenger['Age'] <= 48 :
-        #   predictions[passenger_id] = 1
+        #elif passenger['Age'] >= 30:
+        #  predictions[passenger_id] = 1
         #elif passenger['Fare'] > 50:
         #    predictions[passenger_id] = 1
         #elif passenger['Sex'] == 'female':
