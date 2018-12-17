@@ -25,3 +25,5 @@ def select_first_50(filename):
     #Execute your SQL command against the pandas frame
     aadhaar_solution = pandasql.sqldf(q.lower(), locals())
     return aadhaar_solution
+
+print(select_first_50('aadhaar_data.csv'))
