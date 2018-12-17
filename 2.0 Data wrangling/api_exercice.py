@@ -12,14 +12,16 @@ def api_get_request(url):
     # Once you've done this, return the name of the number 1 top artist in
     # Spain.
     print(url)
+    # Get data from API Method
     data = requests.get(url).text
     data = json.loads(data)
 
+    # Used to print JSON format data
     pp = pprint.PrettyPrinter()
-
     pp.pprint(type(data))
     pp.pprint(data)
 
+    # Query for Top Artist in the list [the first one]
     top_artist = data['topartists']['artist'][0]['name']
 
     pp.pprint(top_artist)
