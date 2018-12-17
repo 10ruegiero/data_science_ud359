@@ -17,11 +17,14 @@ def api_get_request(url):
 
     pp = pprint.PrettyPrinter()
 
-    # pp.pprint(type(data))
-    # pp.pprint(data)
+    pp.pprint(type(data))
+    pp.pprint(data)
 
     top_artist = data['topartists']['artist'][0]['name']
 
     pp.pprint(top_artist)
 
     return top_artist  # return the top artist in Spain
+
+url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=4beab33cc6d65b05800d51f5e83bde1b&format=json'
+api_get_request(url)
