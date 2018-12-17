@@ -19,7 +19,7 @@ def select_first_50(filename):
     # into this exercise below:
     # https://s3.amazonaws.com/content.udacity-data.com/courses/ud359/aadhaar_data.csv
     q = """
-    -- YOUR QUERY HERE
+    SELECT registrar, enrolment_agency FROM aadhaar_data LIMIT 50;
     """
 
     #Execute your SQL command against the pandas frame
