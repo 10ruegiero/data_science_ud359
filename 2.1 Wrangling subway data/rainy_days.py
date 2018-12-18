@@ -28,7 +28,7 @@ def num_rainy_days(filename):
 
     q = """
     SELECT *
-    FROM weather_date
+    FROM weather_data
     LIMIT 50;
     """
 
