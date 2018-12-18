@@ -25,11 +25,13 @@ def num_rainy_days(filename):
     https://s3.amazonaws.com/content.udacity-data.com/courses/ud359/weather_underground.csv
     '''
     weather_data = pandas.read_csv(filename)
+    #pandas.set_option('display.max_columns', 30)
+    #print(weather_data)
+
 
     q = """
-    SELECT *
+    SELECT rain, count(rain)
     FROM weather_data
-    LIMIT 50;
     """
 
     # Execute your SQL command against the pandas frame
