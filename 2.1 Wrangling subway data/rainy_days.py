@@ -30,8 +30,9 @@ def num_rainy_days(filename):
 
 
     q = """
-    SELECT rain, count(rain)
+    SELECT count(rain)
     FROM weather_data
+    WHERE cast(rain as integer) = 1
     """
 
     # Execute your SQL command against the pandas frame
